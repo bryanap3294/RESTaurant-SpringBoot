@@ -36,7 +36,6 @@ public class UsuarioController {
     @GetMapping("/user")
     public List<Usuario> getAllUsers() {
         Sort sortByCreatedAtDesc = new Sort(Sort.Direction.DESC, "createdAt");
-        //no acepta debug ni fatal
         logger.info("Log get USER");
         return usuarioRepository.findAll(sortByCreatedAtDesc);
     }
