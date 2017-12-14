@@ -1,6 +1,8 @@
 package com.restaurant.restaurantservice.model;
 
 import java.util.Date;
+import java.util.List;
+
 import javax.validation.constraints.Size;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.hibernate.validator.constraints.NotBlank;
@@ -23,7 +25,9 @@ public class Orden {
     
     private Double monto;
     
-    public Orden() {
+    private List<Plato> platos;
+
+	public Orden() {
         super();
     }
     
@@ -71,10 +75,18 @@ public class Orden {
         this.createdAt = createdAt;
     }
     
+    public List<Plato> getPlatos() {
+		return platos;
+	}
+
+	public void setPlatos(List<Plato> platos) {
+		this.platos = platos;
+	}
+    
     @Override
     public String toString() {
         return String.format(
-                "Orden[id=%s, nombreCliente='%s', completed='%s', monto= '%s']",
-                id, nombreCliente, estado, monto);
+                "Orden[id=%s, nombreCliente='%s', completed='%s', monto= '%s', platos='%s']",
+                id, nombreCliente, estado, monto, platos);
     }
 }
