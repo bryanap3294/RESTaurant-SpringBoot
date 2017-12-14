@@ -41,7 +41,7 @@ public class UsuarioController {
     }
     
     @PostMapping("/user")
-    public Usuario createTodo(@Valid @RequestBody Usuario user) {
+    public Usuario createUser(@Valid @RequestBody Usuario user) {
     		logger.info("Log post USER"+ user);
         return usuarioRepository.save(user);
     }
